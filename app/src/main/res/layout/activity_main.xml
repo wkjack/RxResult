@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/suooprtTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:text="RxResult-支持support库"
+        android:textSize="18sp"
+        android:textColor="#000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/support_callback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="回调模式"
+        app:layout_constraintStart_toStartOf="@id/suooprtTv"
+        app:layout_constraintTop_toBottomOf="@id/suooprtTv" />
+
+    <Button
+        android:id="@+id/support_obser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:text="观察者模式"
+        app:layout_constraintStart_toEndOf="@+id/support_callback"
+        app:layout_constraintTop_toTopOf="@+id/support_callback" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/androidXTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="RxResult-支持androidX"
+        android:textSize="18sp"
+        android:textColor="#000"
+        app:layout_constraintStart_toStartOf="@id/support_callback"
+        app:layout_constraintTop_toBottomOf="@id/support_callback" />
+
+    <Button
+        android:id="@+id/androidX_callback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="回调模式"
+        app:layout_constraintStart_toStartOf="@id/androidXTv"
+        app:layout_constraintTop_toBottomOf="@id/androidXTv" />
+
+    <Button
+        android:id="@+id/androidX_obser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:text="观察者模式"
+        app:layout_constraintStart_toEndOf="@id/androidX_callback"
+        app:layout_constraintTop_toTopOf="@id/androidX_callback" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/showLabelTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="获取的内容:"
+        android:textSize="18sp"
+        android:textColor="#666"
+        app:layout_constraintStart_toStartOf="@id/androidX_callback"
+        app:layout_constraintTop_toBottomOf="@id/androidX_callback" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/showTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="18sp"
+        android:textColor="#000"
+        app:layout_constraintStart_toEndOf="@id/showLabelTv"
+        app:layout_constraintTop_toTopOf="@id/showLabelTv" />
+
+</android.support.constraint.ConstraintLayout>
