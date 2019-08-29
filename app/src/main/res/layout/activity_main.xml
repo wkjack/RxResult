@@ -33,37 +33,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
         android:text="观察者模式"
-        app:layout_constraintStart_toEndOf="@+id/support_callback"
-        app:layout_constraintTop_toTopOf="@+id/support_callback" />
-
-    <android.support.v7.widget.AppCompatTextView
-        android:id="@+id/androidXTv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="RxResult-支持androidX"
-        android:textSize="18sp"
-        android:textColor="#000"
-        app:layout_constraintStart_toStartOf="@id/support_callback"
-        app:layout_constraintTop_toBottomOf="@id/support_callback" />
-
-    <Button
-        android:id="@+id/androidX_callback"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="回调模式"
-        app:layout_constraintStart_toStartOf="@id/androidXTv"
-        app:layout_constraintTop_toBottomOf="@id/androidXTv" />
-
-    <Button
-        android:id="@+id/androidX_obser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:text="观察者模式"
-        app:layout_constraintStart_toEndOf="@id/androidX_callback"
-        app:layout_constraintTop_toTopOf="@id/androidX_callback" />
+        app:layout_constraintStart_toEndOf="@id/support_callback"
+        app:layout_constraintTop_toTopOf="@id/support_callback" />
 
     <android.support.v7.widget.AppCompatTextView
         android:id="@+id/showLabelTv"
@@ -73,8 +44,8 @@
         android:text="获取的内容:"
         android:textSize="18sp"
         android:textColor="#666"
-        app:layout_constraintStart_toStartOf="@id/androidX_callback"
-        app:layout_constraintTop_toBottomOf="@id/androidX_callback" />
+        app:layout_constraintStart_toStartOf="@id/support_callback"
+        app:layout_constraintTop_toBottomOf="@id/support_callback" />
 
     <android.support.v7.widget.AppCompatTextView
         android:id="@+id/showTv"

@@ -74,19 +74,5 @@ public class MainActivity extends AppCompatActivity {
                         });
             }
         });
-
-        findViewById(R.id.androidX_callback).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-        findViewById(R.id.androidX_obser).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
     }
 }
