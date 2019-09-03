@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 
+import com.alibaba.android.arouter.facade.Postcard;
+
 import io.reactivex.Observable;
 
 public final class RxResult {
@@ -46,11 +48,31 @@ public final class RxResult {
     /**
      * 调用
      *
-     * @param intent 回调
+     * @param intent 意图
      * @return 返回被观察对象
      */
     public final Observable<RxResultInfo> start(Intent intent) {
         return fragment.startResult(intent);
+    }
+
+    /**
+     * 调用
+     *
+     * @param postcard 路由信息
+     * @return 返回被观察对象
+     */
+    public final Observable<RxResultInfo> start(Postcard postcard) {
+        return fragment.startResult(postcard);
+    }
+
+    /**
+     * 调用
+     *
+     * @param postcard 路由信息
+     * @param callback 回调
+     */
+    public final void start(Postcard postcard, RxResultCallback callback) {
+        fragment.startResult(postcard, callback);
     }
 
 

@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.SparseArray;
 
+import com.alibaba.android.arouter.facade.Postcard;
+
 import java.util.Random;
 
 import io.reactivex.Observable;
@@ -32,14 +34,22 @@ public class RxResultFragment extends Fragment {
         PublishSubject<RxResultInfo> subject = mSubjects.get(requestCode);
         if (subject != null) {
             mSubjects.delete(requestCode);
-            subject.onNext(new RxResultInfo(resultCode, data));
+            try {
+                subject.onNext(new RxResultInfo(resultCode, data));
+            }catch (Exception e){
+                subject.onError(e);
+            }
             subject.onComplete();
         }
 
         RxResultCallback callback = mCallbacks.get(requestCode);
         if (callback != null) {
             mCallbacks.delete(requestCode);
-            callback.onResult(new RxResultInfo(resultCode, data));
+            try {
+                callback.onResult(new RxResultInfo(resultCode, data));
+            }catch (Exception e){
+                e.printStackTrace();
+            }
         }
     }
 
@@ -60,6 +70,24 @@ public class RxResultFragment extends Fragment {
         int requestCode = generateRequestCode();
         mCallbacks.put(requestCode, callback);
         startActivityForResult(intent, requestCode);
+    }
+
+    public void startResult(Postcard postcard, RxResultCallback callback) {
+        Intent transferIntent = postcardToIntent(postcard);
+        startResult(transferIntent, callback);
+    }
+
+    public Observable<RxResultInfo> startResult(Postcard postcard) {
+        Intent transferIntent = postcardToIntent(postcard);
+        return startResult(transferIntent);
+    }
+
+    private Intent postcardToIntent(Postcard postcard){
+        Intent intent = new Intent(getContext(), RxResultActivity.class);
+        intent.putExtra("path", postcard.getPath());
+        intent.putExtra("flag", postcard.getFlags());
+        intent.putExtras(postcard.getExtras());
+        return intent;
     }
 
 
